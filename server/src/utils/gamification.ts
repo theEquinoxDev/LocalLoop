@@ -19,6 +19,12 @@ export const pointsToNextLevel = (currentPoints: number): number => {
 };
 
 
+export const checkLevelUp = (oldPoints: number, newPoints: number): boolean => {
+  const oldLevel = calculateLevel(oldPoints);
+  const newLevel = calculateLevel(newPoints);
+  return newLevel > oldLevel;
+};
+
 export const getRankTitle = (level: number): string => {
   if (level >= 20) return 'Legend';
   if (level >= 15) return 'Master';
@@ -26,3 +32,4 @@ export const getRankTitle = (level: number): string => {
   if (level >= 5) return 'Helper';
   return 'Beginner';
 };
+
