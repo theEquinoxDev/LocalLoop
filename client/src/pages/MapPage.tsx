@@ -2,10 +2,8 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { MapView } from '../features/map/MapView';
 import { PostItemModal } from '../features/post-item/PostItemModal';
-import { ItemCarousel } from '../components/ui/ItemCarousel';
 import { ItemsSidebar } from '../components/layout/ItemsSidebar';
 import { useAuthStore } from '../store/auth.store';
-import { useItemStore } from '../store/item.store';
 import { useMapStore } from '../store/map.store';
 import { Button } from '../components/ui/Button';
 import { UserStatsBadge } from '../components/feedback/UserStatsBadge';
@@ -16,7 +14,6 @@ export const MapPage = () => {
   const token = useAuthStore((s) => s.token);
   const user = useAuthStore((s) => s.user);
   const logout = useAuthStore((s) => s.logout);
-  const items = useItemStore((s) => s.items);
   const mapStyle = useMapStore((s) => s.mapStyle);
   const toggleMapStyle = useMapStore((s) => s.toggleMapStyle);
   const [searchQuery, setSearchQuery] = useState('');
